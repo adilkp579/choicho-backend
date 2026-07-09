@@ -10,7 +10,7 @@ const router = express.Router();
  * This is SECURE - credentials are not hardcoded in client
  */
 function generateTurnCredentials(username, ttl = 3600) {
-  const secret = process.env.TURN_SECRET || 'default-secret-change-this';
+  const secret = process.env.TURN_SECRET || 'xyEoZGCCUl7ZAQ4h';
   const expiry = Math.floor(Date.now() / 1000) + ttl;
   
   // Create HMAC-SHA1 signature
