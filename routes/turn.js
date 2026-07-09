@@ -42,6 +42,10 @@ router.get('/', verifyToken, async (req, res, next) => {
       { urls: "stun:stun.l.google.com:19302" },
       { urls: "stun:stun1.l.google.com:19302" },
       { urls: "stun:stun.relay.metered.ca:80" }
+      { urls: "turn:standard.relay.metered.ca:80", username: "a6b2ebd89a4174b7f3843634", credential: "xyEoZGCCUl7ZAQ4h" },
+      { urls: "turn:standard.relay.metered.ca:80?transport=tcp", username: "a6b2ebd89a4174b7f3843634", credential: "xyEoZGCCUl7ZAQ4h" },
+      { urls: "turn:standard.relay.metered.ca:443", username: "a6b2ebd89a4174b7f3843634", credential: "xyEoZGCCUl7ZAQ4h" },
+      { urls: "turns:standard.relay.metered.ca:443?transport=tcp", username: "a6b2ebd89a4174b7f3843634", credential: "xyEoZGCCUl7ZAQ4h" }
     ];
     
     // Add TURN server if configured
