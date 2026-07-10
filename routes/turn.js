@@ -10,7 +10,7 @@ const router = express.Router();
  * This is SECURE - credentials are not hardcoded in client
  */
 function generateTurnCredentials(username, ttl = 3600) {
-  const secret = process.env.TURN_SECRET || 'xyEoZGCCUl7ZAQ4h';
+  const secret = process.env.TURN_SECRET || 'default-secret-change-this';
   const expiry = Math.floor(Date.now() / 1000) + ttl;
   
   // Create HMAC-SHA1 signature
@@ -38,7 +38,7 @@ router.get('/', verifyToken, async (req, res, next) => {
     const turnCredentials = generateTurnCredentials(userId, ttl);
     
     // Build ICE server configuration
-    const iceServers =  [
+    const iceServers = [
       { urls: "stun:stun.l.google.com:19302" }, 
       { urls: "stun:stun1.l.google.com:19302" },
       { urls: "stun:stun.relay.metered.ca:80" },
