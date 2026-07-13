@@ -129,6 +129,7 @@ app.use(errorHandler);
 // ============================================
 // START SERVER
 // ============================================
+app.get('/', (req, res) =>res.send('Choicho Backend is running'));
 
 app.listen(PORT, () => {
   console.log(`\n🚀 Choicho Backend running on port ${PORT}`);
